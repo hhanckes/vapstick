@@ -3,7 +3,7 @@
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <i class="fa fa-bars"></i>
+                <i class="glyphicon glyphicon-forward"></i>
             </button>
 			<%= link_to raw('<i class="glyphicon glyphicon-forward"></i>')+raw('<span class="light">Vapstick</span>'), root_path, :class => "navbar-brand page-scroll"%>
         </div>
@@ -16,16 +16,16 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about">¿Qué es?</a>
+					<%= link_to '¿Qué es?', root_path+'#about' %>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#video">Video</a>
+					<%= link_to 'Sabores', root_path+'#flavours' %>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#flavours">Sabores</a>
+					<%= link_to 'Puntos de Venta', root_path+'#points-of-sale' %>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#points-of-sale">Puntos de Venta</a>
+					<%= link_to 'Preguntas Frecuentes', faq_path  %>
                 </li>
                 <li>
                     <%= link_to 'Compra Online', new_order_path %>
