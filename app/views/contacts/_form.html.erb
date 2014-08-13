@@ -1,0 +1,48 @@
+<%= form_for(@contact, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @contact.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+      <% @contact.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row" style="margin-bottom:10px">
+	<div class="col-md-2" style="text-align:right; margin-top:5px">
+    	<%= f.label :name, 'Nombre' %>
+	</div>
+	<div class="col-md-7">
+    	<%= f.text_field :name, :class => "form-control input-sm", placeholder: 'Tu nombre completo' %>
+	</div>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+	<div class="col-md-2" style="text-align:right; margin-top:5px">
+    	<%= f.label :email, 'Correo' %>
+	</div>
+	<div class="col-md-7">
+    	<%= f.text_field :email, :class => "form-control input-sm", placeholder: 'Tu correo electrónico' %>
+	</div>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+	<div class="col-md-2" style="text-align:right; margin-top:5px">
+    	<%= f.label :phone_number, 'Teléfono' %>
+	</div>
+	<div class="col-md-7">
+    	<%= f.text_field :phone_number, :class => "form-control input-sm", placeholder: 'Teléfono de contacto' %>
+	</div>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+	<div class="col-md-2" style="text-align:right; margin-top:5px">
+    	<%= f.label :content, 'Mensaje' %>
+	</div>
+	<div class="col-md-7">
+    	<%= f.text_area :content, :class => "form-control input-sm", rows: 10, placeholder: '¿Cómo te podemos ayudar?' %>
+	</div>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Enviar', :class => 'btn btn-danger' %>
+  </div>
+<% end %>
