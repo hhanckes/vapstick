@@ -1,0 +1,41 @@
+<section id="contact" class="container content-section">
+    <div class="row">
+        <div class="col-lg-12">
+			<h2>Listing orders</h2>
+			<table class="table">
+			  <thead>
+			    <tr>
+			      <th>Name</th>
+			      <th>Phone number</th>
+			      <th>Shipping area</th>
+			      <th>Products Price</th>
+			      <th>Shipping Cost</th>
+			      <th>Total</th>
+			      <th>Fecha Creación</th>
+			      <th></th>
+			      <th></th>
+			      <th></th>
+			    </tr>
+			  </thead>
+
+			  <tbody>
+			    <% @orders.each do |order| %>
+			      <tr>
+			        <td><%= order.name %></td>
+			        <td><%= order.phone_number %></td>
+			        <td><%= order.shipping_area.name %></td>
+			        <td><%= order.created_at %></td>
+					<td><%= number_to_currency order.product_orders.sum(:product_price) + order.shipping_cost, precision: 0 %></td>
+					<td><%= number_to_currency order.shipping_cost, precision: 0 %></td>
+					<td><%= number_to_currency order.product_orders.sum(:product_price) + order.shipping_cost, precision: 0 %></td>
+			        <td><%= link_to 'Detalle', order %></td>
+			        <td><%= link_to 'Edit', edit_order_path(order) %></td>
+			        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			      </tr>
+			    <% end %>
+			  </tbody>
+			</table>
+        </div>
+    </div>
+</section>
+

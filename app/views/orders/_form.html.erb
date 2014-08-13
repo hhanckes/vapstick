@@ -1,0 +1,59 @@
+<%= nested_form_for(@order, :html => { class: "form-horizontal", role: "form" }) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+	<div class="col-md-4" style="text-align:right;">
+  		<p style="margin:0px 0px 10px 0px">Datos para el despacho</p>
+	</div>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+	<div class="col-md-4" style="text-align:right; margin-top:5px">
+    	<%= f.label :name, 'Nombre' %>
+	</div>
+	<div class="col-md-7">
+    	<%= f.text_field :name, :class => "form-control input-sm", placeholder: 'Tu nombre completo' %>
+	</div>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+	<div class="col-md-4" style="text-align:right; margin-top:5px">
+    	<%= f.label :phone_number, 'Teléfono' %>
+	</div>
+	<div class="col-md-7">
+    	<%= f.text_field :phone_number, :class => "form-control input-sm", placeholder: 'Teléfono de contacto para coordinar la entrega' %>
+	</div>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+	<div class="col-md-4" style="text-align:right; margin-top:5px">
+    	<%= f.label :address, 'Dirección' %>
+	</div>
+	<div class="col-md-7">
+    	<%= f.text_field :address, :class => "form-control input-sm", placeholder: 'Dirección completa donde despacharemos los productos' %>
+	</div>
+  </div>
+  <div class="row" style="margin-bottom:10px">
+	<div class="col-md-4" style="text-align:right; margin-top:5px">
+    	<%= f.label :shipping_area_id, 'Sector Dirección' %>
+	</div>
+	<div class="col-md-7">
+		<%= f.collection_select :shipping_area_id, ShippingArea.all, :id, :name_with_cost, {:allow_blank => false, prompt: 'Selecciona la zona de despacho' }, style: "width:100%", class: 'form-control input-sm' %>
+	</div>
+  </div>
+  <div class="row">
+	<div class="col-md-4" style="text-align:right;">
+  		<p style="margin:10px 0px 10px 0px">Selecciona los productos</p>
+	</div>
+  </div>
+  <%= render 'product_order_fields', :f => f %>
+  <div class="actions" style="border-top:1px solid white; border-bottom:1px solid white; padding: 15px 0px 20px 0px; margin-top:20px;">
+    <%= f.submit 'Generar Pedido', :class => 'btn btn-danger' %>
+  </div>
+<% end %>

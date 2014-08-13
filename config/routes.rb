@@ -1,4 +1,10 @@
 Vapstick::Application.routes.draw do
+  resources :orders
+
+  resources :products
+
+  resources :shipping_areas
+
   resources :contacts
 
   get "welcome/index"

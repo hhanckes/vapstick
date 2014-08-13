@@ -5,9 +5,7 @@
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand page-scroll" href="#page-top">
-                <i class="glyphicon glyphicon-forward"></i> <span class="light">Vapstick</span>
-            </a>
+			<%= link_to raw('<i class="glyphicon glyphicon-forward"></i>')+raw('<span class="light">Vapstick</span>'), root_path, :class => "navbar-brand page-scroll"%>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -30,14 +28,15 @@
                     <a class="page-scroll" href="#points-of-sale">Puntos de Venta</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#pricing">Compra Online</a>
+                    <%= link_to 'Compra Online', new_order_path %>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#contact">Contacto</a>
+					<%= link_to 'Contacto', new_contact_path %>
                 </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
     </div>
+	<%= bootstrap_flash %>
     <!-- /.container -->
 </nav>

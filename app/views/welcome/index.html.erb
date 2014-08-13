@@ -42,87 +42,69 @@
 </section>
 
 <!-- Download Section -->
-<section id="flavours" class="content-section" style="border-bottom:3px solid white; border-top:3px solid white">
+<section id="flavours" style="border-bottom:3px solid white; border-top:3px solid white; padding:30px 0px 30px 0px">
     <div class="download-section">
-        <div class="container">
-            <div class="col-lg-12">
-                <h3>6 sabores para disfrutar</h3>
-            </div>
-        </div>
-		<hr />
         <div class="container product_description">
 			<div class="col-lg-4">
-				<%= image_tag 'vapstick_capuccino.jpg', :class => "img-thumbnail" %>
-			</div>
-            <div class="col-lg-8">
                 <h3 style="color:#d87645">Capuccino</h3>
-                <p>La más fina selección en sabor; Capuccino es verdaderamente sorprendente.
-				Un sabor intenso a café, con algunos toques de crema, ideal para dias más fríos y para cobijarse del invierno.
-				Definitivamente un favorito de nuestros consumidores. Disfrútalo y vapea donde quieras el mejor sabor a café!</p>
-            </div>
-		</div>
-		<hr />
-		<div class="container product_description">
-            <div class="col-lg-8">
+				<%= link_to image_tag('vapstick_capuccino.jpg', :class => "img-thumbnail"), '#', 'data-toggle' => "modal", 'data-target' => "#vapstick_capuccino" %>
+				<%= render 'product_detail_modal', id: 'vapstick_capuccino', title: 'Vapstick Capuccino', 
+					text: 'La más fina selección en sabor; Capuccino es verdaderamente sorprendente.
+					Un sabor intenso a café, con algunos toques de crema, ideal para dias más fríos y para cobijarse del invierno.
+					Definitivamente un favorito de nuestros consumidores. Disfrútalo y vapea donde quieras el mejor sabor a café!',
+					image_file_name: 'vapstick_capuccino.jpg' %>
+			</div>
+			<div class="col-lg-4">
                 <h3 style="color:#ac2222">Tropical</h3>
-                <p>Lo mejor de caribe, para que vibres con su sabor!
-				Tropical es una mezcla de sabores frescos y frutales con un exquisito toue cítrico.
-				Uno de los más solicitados, por hombres y mujeres.
-				Vaporiza donde quieras, recuerda que no hay humo, solo vapor tropical!</p>
-            </div>
-			<div class="col-lg-4">
-				<%= image_tag 'vapstick_tropical.jpg', :class => "img-thumbnail" %>
+				<%= link_to image_tag('vapstick_tropical.jpg', :class => "img-thumbnail"), '#', 'data-toggle' => "modal", 'data-target' => "#vapstick_tropical" %>
+				<%= render 'product_detail_modal', id: 'vapstick_tropical', title: 'Vapstick Tropical', 
+					text: 'Lo mejor de caribe, para que vibres con su sabor!
+					Tropical es una mezcla de sabores frescos y frutales con un exquisito toue cítrico.
+					Uno de los más solicitados, por hombres y mujeres.
+					Vaporiza donde quieras, recuerda que no hay humo, solo vapor tropical!',
+					image_file_name: 'vapstick_tropical.jpg' %>
 			</div>
-		</div>
-		<hr />
-		<div class="container product_description">
 			<div class="col-lg-4">
-				<%= image_tag 'vapstick_berries.jpg', :class => "img-thumbnail" %>
-			</div>
-            <div class="col-lg-8">
                 <h3 style="color:#554c8f">Berries</h3>
-                <p>Toda la profundidad, dulzor y acidez que ofrece esta variedad de frutas.
-				Berries junta lo mejor de estos sabores y te lo trae en forma de vapor.
-				Así puedes usarlo en cualquier lugar, sin molestar a nadie.
-				Berries sólo para tí. Pruébalo: vapéa y verás!</p>
-            </div>
+				<%= link_to image_tag('vapstick_berries.jpg', :class => "img-thumbnail"), '#', 'data-toggle' => "modal", 'data-target' => "#vapstick_berries" %>
+				<%= render 'product_detail_modal', id: 'vapstick_berries', title: 'Vapstick Berries', 
+					text: 'Toda la profundidad, dulzor y acidez que ofrece esta variedad de frutas.
+					Berries junta lo mejor de estos sabores y te lo trae en forma de vapor.
+					Así puedes usarlo en cualquier lugar, sin molestar a nadie.
+					Berries sólo para tí. Pruébalo: vapéa y verás!',
+					image_file_name: 'vapstick_berries.jpg' %>
+			</div>
 		</div>
-		<hr />
+		
 		<div class="container product_description">
-            <div class="col-lg-8">
+			<div class="col-lg-4">
                 <h3 style="color:#7e7f77">Cigar</h3>
-                <p>La mejor opción para quienes buscan el clásico sabor a tabaco sin preocuparse por estar en un lugar cerrado.
-				Recupera tu libertad, ahora puedes disfrutar de Cigar y su exquisito sabor a tabaco sin dañar tu salud, la de los demás y sin todos los aditivos químicos como alquitrán y arsénico. ¡Una excelente alternativa al cigarro!</p>
-            </div>
-			<div class="col-lg-4">
-				<%= image_tag 'vapstick_cigar.jpg', :class => "img-thumbnail" %>
+				<%= link_to image_tag('vapstick_cigar.jpg', :class => "img-thumbnail"), '#', 'data-toggle' => "modal", 'data-target' => "#vapstick_cigar" %>
+				<%= render 'product_detail_modal', id: 'vapstick_cigar', title: 'Vapstick Cigar', 
+					text: 'La mejor opción para quienes buscan el clásico sabor a tabaco sin preocuparse por estar en un lugar cerrado.
+					Recupera tu libertad, ahora puedes disfrutar de Cigar y su exquisito sabor a tabaco sin dañar tu salud, la de los demás y sin todos los aditivos químicos como alquitrán y arsénico. ¡Una excelente alternativa al cigarro!',
+					image_file_name: 'vapstick_cigar.jpg' %>
 			</div>
-		</div>
-		<hr />
-		<div class="container product_description">
 			<div class="col-lg-4">
-				<%= image_tag 'vapstick_mint.jpg', :class => "img-thumbnail" %>
-			</div>
-            <div class="col-lg-8">
                 <h3 style="color:#48ae86">Mint</h3>
-                <p>El sabor más fresco de todos! Excelente elección para los dias de verano.
-				No existe nada más refrescante que el vapor de Mint...
-				Y ahora, tampoco más sano! El sabor más intenso y duradero, favorito de muchos, lo recomendamos definitivamente!
-				Vapéa donde quieras, es solo vapor de agua!</p>
-            </div>
-		</div>
-		<hr />
-		<div class="container product_description">
-            <div class="col-lg-8">
-                <h3 style="color:#d87645">Vainilla</h3>
-                <p>El más dulce de los sabores ahora en tu vaporizador favorito.
-				Lleva este clásico sabor Vanilla donde quieras con Vapstick.
-				Sin baterías, recargas ni encendedores, listo para usar!</p>
-            </div>
-			<div class="col-lg-4">
-				<%= image_tag 'vapstick_vainilla.jpg', :class => "img-thumbnail" %>
+				<%= link_to image_tag('vapstick_mint.jpg', :class => "img-thumbnail"), '#', 'data-toggle' => "modal", 'data-target' => "#vapstick_mint" %>
+				<%= render 'product_detail_modal', id: 'vapstick_mint', title: 'Vapstick Mint', 
+					text: 'El sabor más fresco de todos! Excelente elección para los dias de verano.
+					No existe nada más refrescante que el vapor de Mint...
+					Y ahora, tampoco más sano! El sabor más intenso y duradero, favorito de muchos, lo recomendamos definitivamente!
+					Vapéa donde quieras, es solo vapor de agua!',
+					image_file_name: 'vapstick_mint.jpg' %>
 			</div>
-        </div>
+			<div class="col-lg-4">
+                <h3 style="color:#d87645">Vainilla</h3>
+				<%= link_to image_tag('vapstick_vainilla.jpg', :class => "img-thumbnail"), '#', 'data-toggle' => "modal", 'data-target' => "#vapstick_vainilla" %>
+				<%= render 'product_detail_modal', id: 'vapstick_vainilla', title: 'Vapstick Vanilla', 
+					text: 'El más dulce de los sabores ahora en tu vaporizador favorito.
+					Lleva este clásico sabor Vanilla donde quieras con Vapstick.
+					Sin baterías, recargas ni encendedores, listo para usar!',
+					image_file_name: 'vapstick_vainilla.jpg' %>
+			</div>
+		</div>
     </div>
 </section>
 
@@ -133,14 +115,6 @@
         </div>
     </div>
  </section>
-
-<section id="pricing" class="text-center" style="border-bottom:3px solid white">
-    <div class="row video-section">
-        <div class="col-lg-8 col-lg-offset-2">
-            <h2>Haz tu orden ya!</h2>
-        </div>
-    </div>
-</section>
 
 <!-- Contact Section -->
 <section id="contact" class="container content-section text-center">
@@ -169,10 +143,3 @@
 		</div>
 	</div>
 </section>
-
-<!-- Footer -->
-<footer>
-    <div class="container text-center">
-        <p>Copyright &copy; Vapstick Colombia 2014</p>
-    </div>
-</footer>

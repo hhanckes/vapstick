@@ -1,0 +1,111 @@
+<header class="intro">
+    <div class="intro-body">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="intro-text" style="vertical-align:bottom;">Detalles de tu pedido <%= image_tag 'vapstick_smoke_white.png' %></p>
+            </div>
+        	<div class="col-md-6">
+			  <div class="row">
+				<div class="col-md-12" style="text-align:left;">
+			  		<p style="margin:0px 0px 10px 0px">Datos del despacho</p>
+				</div>
+			  </div>
+				<div class="row" style="margin-bottom:10px">
+					<div class="col-md-2" style="text-align:right;">
+				  		Nombre:
+					</div>
+					<div class="col-md-10" style="text-align:left;">
+				  		 <%= @order.name %>
+					</div>
+				</div>
+				<div class="row" style="margin-bottom:10px">
+					<div class="col-md-2" style="text-align:right;">
+				  		Teléfono:
+					</div>
+					<div class="col-md-6" style="text-align:left;">
+				  		 <%= @order.phone_number %>
+					</div>
+				</div>
+				<div class="row" style="margin-bottom:10px">
+					<div class="col-md-2" style="text-align:right;">
+				  		Dirección:
+					</div>
+					<div class="col-md-6" style="text-align:left;">
+				  		 <%= @order.address %> en <%= @order.shipping_area.name %>
+					</div>
+				</div>
+			  <div class="row">
+				<div class="col-md-12" style="text-align:left;">
+			  		<p style="margin:20px 0px 10px 0px">Productos comprados</p>
+				</div>
+			  </div>
+				<% @order.product_orders.each do |po| %>
+				<div class="row" style="margin-bottom:10px">
+					<div class="col-md-2" style="text-align:right;">
+				  		<%= po.quantity %>
+					</div>
+					<div class="col-md-6" style="text-align:left;">
+				  		 <%= po.product.name %> <%= number_to_currency po.product_price, precision: 0 %>
+					</div>
+				</div>
+				<% end %>
+				<div class="row">
+				<div class="col-md-12" style="text-align:left;">
+			  		<p style="margin:20px 0px 10px 0px">Precio</p>
+				</div>
+			  </div>
+				<div class="row" style="margin-bottom:10px">
+					<div class="col-md-3" style="text-align:right;">
+				  		Costo despacho
+					</div>
+					<div class="col-md-6" style="text-align:left;">
+				  		 <%= number_to_currency @order.shipping_cost, precision: 0 %>
+					</div>
+				</div>
+				<div class="row" style="margin-bottom:10px">
+					<div class="col-md-3" style="text-align:right;">
+				  		Costo productos
+					</div>
+					<div class="col-md-6" style="text-align:left;">
+				  		 <%= number_to_currency @order.product_orders.sum(:product_price), precision: 0 %>
+					</div>
+				</div>
+				<hr />
+				<div class="row" style="margin-bottom:10px">
+					<div class="col-md-3" style="text-align:right;">
+				  		Total
+					</div>
+					<div class="col-md-6" style="text-align:left;">
+				  		 <%= number_to_currency @order.product_orders.sum(:product_price) + @order.shipping_cost, precision: 0 %>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</header>
+<!-- Contact Section -->
+<section id="contact" class="container content-section text-center">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <p>Si quieres realizar una modificación a tu pedido <br />o tienes dudas sobre el proceso, ¡contáctanos!</p>
+            <p><a href="mailto:contacto@vapstick.com.co">contacto@vapstick.com.co</a>
+            </p>
+            <ul class="list-inline banner-social-buttons">
+                <li>
+                    <a href="https://twitter.com/vapstick-colombia" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                </li>
+                <li>
+                    <a href="https://facebook.com/vapstick-colombia" target="_blank" class="btn btn-default btn-lg"><i class="glyphicon glyphicon-thumbs-up"></i> <span class="network-name">Facebook</span></a>
+                </li>
+                <li>
+                    <a href="https://plus.google.com/vapstick-colombia" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row" style="margin-top:30px">
+        <div class="col-lg-8 col-lg-offset-2">
+			<%= image_tag 'logo.png' %>
+		</div>
+	</div>
+</section>

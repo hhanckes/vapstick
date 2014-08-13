@@ -1,0 +1,15 @@
+<%= f.fields_for :product_orders do |po| %>
+  <div class="row" style="margin-bottom:10px">
+	<div class="col-md-2 col-md-offset-2" style="text-align:right;">
+    	<%= po.text_field :quantity, :class => "form-control input-sm", placeholder: 'Cantidad' %>
+	</div>
+	<div class="col-md-6">
+		<%= po.collection_select :product_id, Product.all, :id, :name_with_price, {:allow_blank => false, prompt: 'Selecciona el producto' } , style: "width:100%", class: 'form-control input-sm' %>
+	</div>
+	<div class="col-md-1">
+		<%= po.link_to_remove 'Eliminar', :class => 'btn btn-warning btn-xs' %>
+	</div>
+  </div>
+<% end %>
+
+<%= f.link_to_add 'Agregar Producto', :product_orders, :class => 'btn btn-primary btn-xs' %>

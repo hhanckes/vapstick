@@ -1,0 +1,29 @@
+<h1>Listing shipping_areas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cost</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shipping_areas.each do |shipping_area| %>
+      <tr>
+        <td><%= shipping_area.name %></td>
+        <td><%= shipping_area.cost %></td>
+        <td><%= link_to 'Show', shipping_area %></td>
+        <td><%= link_to 'Edit', edit_shipping_area_path(shipping_area) %></td>
+        <td><%= link_to 'Destroy', shipping_area, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Shipping area', new_shipping_area_path %>

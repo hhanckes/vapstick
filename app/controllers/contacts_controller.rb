@@ -28,7 +28,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Tu mensaje se ha enviado. Te contactaremos a la brevedad.' }
         format.json { render action: 'show', status: :created, location: @contact }
       else
         format.html { render action: 'new' }
@@ -69,6 +69,6 @@ class ContactsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contact_params
-      params.require(:contact).permit(:email, :name, :content)
+      params.require(:contact).permit(:email, :name, :content, :phone_number)
     end
 end
